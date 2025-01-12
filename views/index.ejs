@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamMax</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navbar -->
+  <header class="bg-gray-800 shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-purple-500">StreamMax</h1>
+      <nav class="flex space-x-4">
+        <a href="#" class="hover:text-purple-400">Home</a>
+        <a href="#" class="hover:text-purple-400">Movies</a>
+        <a href="#" class="hover:text-purple-400">TV Shows</a>
+        <a href="#" class="hover:text-purple-400">My List</a>
+      </nav>
+      <div>
+        <input 
+          type="text" 
+          placeholder="Search..." 
+          class="bg-gray-700 text-sm rounded-full px-4 py-1 focus:outline-none focus:ring-2 focus:ring-purple-400">
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900"></div>
+    <img 
+      src="https://source.unsplash.com/1600x900/?movie,cinema" 
+      alt="Streaming Banner" 
+      class="w-full h-96 object-cover">
+    <div class="absolute bottom-10 left-10">
+      <h2 class="text-4xl font-bold text-white">Stream the Best Movies & Shows</h2>
+      <p class="mt-2 text-gray-300">Discover your next favorite movie or binge-worthy series.</p>
+      <button class="mt-4 px-6 py-2 bg-purple-500 text-white font-semibold rounded-full hover:bg-purple-600">Start Watching</button>
+    </div>
+  </section>
+
+  <!-- Trending Section -->
+  <section class="container mx-auto px-4 py-8">
+    <h3 class="text-3xl font-bold text-purple-500 mb-6">Trending Now</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Static movie data -->
+      <div class="bg-gray-800 rounded-lg overflow-hidden">
+        <img src="https://source.unsplash.com/1600x900/?action-movie" alt="Movie Title" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Action Movie 1</h4>
+          <p class="text-sm text-gray-400">Action-packed movie with thrilling sequences and intense drama.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-lg overflow-hidden">
+        <img src="https://source.unsplash.com/1600x900/?comedy-movie" alt="Movie Title" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Comedy Movie 2</h4>
+          <p class="text-sm text-gray-400">A hilarious comedy movie that will keep you laughing throughout.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-lg overflow-hidden">
+        <img src="https://source.unsplash.com/1600x900/?drama-movie" alt="Movie Title" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Drama Movie 3</h4>
+          <p class="text-sm text-gray-400">A gripping drama that explores deep emotions and conflicts.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-lg overflow-hidden">
+        <img src="https://source.unsplash.com/1600x900/?thriller-movie" alt="Movie Title" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Thriller Movie 4</h4>
+          <p class="text-sm text-gray-400">A thrilling movie with suspense and unexpected twists.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Genres Section -->
+  <section class="container mx-auto px-4 py-8">
+    <h3 class="text-3xl font-bold text-purple-500 mb-6">Browse by Genre</h3>
+    <div class="flex space-x-4 overflow-x-auto">
+      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Action</button>
+      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Romance</button>
+      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Sci-Fi</button>
+      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Drama</button>
+      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Horror</button>
+      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Comedy</button>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="bg-gray-800 py-8">
+    <div class="container mx-auto px-4">
+      <h3 class="text-3xl font-bold text-purple-500 mb-6">What Our Users Say</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <p class="text-gray-300">"StreamX is amazing! I found all my favorite shows in one place."</p>
+          <p class="mt-4 font-semibold text-purple-400">- Jane Doe</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <p class="text-gray-300">"Great UI and smooth streaming experience."</p>
+          <p class="mt-4 font-semibold text-purple-400">- John Smith</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <p class="text-gray-300">"Highly recommend StreamX to all movie lovers!"</p>
+          <p class="mt-4 font-semibold text-purple-400">- Emily Davis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-8">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div>
+        <h4 class="font-bold text-white mb-4">StreamMax</h4>
+        <p class="text-gray-400">Your go-to streaming platform for movies and TV shows.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-4">Company</h4>
+        <ul class="text-gray-400 space-y-2">
+          <li><a href="#" class="hover:text-purple-400">About Us</a></li>
+          <li><a href="#" class="hover:text-purple-400">Careers</a></li>
+          <li><a href="#" class="hover:text-purple-400">Press</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-4">Support</h4>
+        <ul class="text-gray-400 space-y-2">
+          <li><a href="#" class="hover:text-purple-400">Help Center</a></li>
+          <li><a href="#" class="hover:text-purple-400">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-purple-400">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-purple-400">Facebook</a>
+          <a href="#" class="hover:text-purple-400">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
