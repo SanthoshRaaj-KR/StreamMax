@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StreamMax</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body class="bg-gray-900 text-white">
   <!-- Navbar -->
@@ -43,41 +44,37 @@
   <!-- Trending Section -->
   <section class="container mx-auto px-4 py-8">
     <h3 class="text-3xl font-bold text-purple-500 mb-6">Trending Now</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Static movie data -->
-      <div class="bg-gray-800 rounded-lg overflow-hidden">
-        <img src="https://source.unsplash.com/1600x900/?action-movie" alt="Movie Title" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Action Movie 1</h4>
-          <p class="text-sm text-gray-400">Action-packed movie with thrilling sequences and intense drama.</p>
-        </div>
+    <div class="relative">
+      <button
+        id="scrollLeft"
+        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10">
+        &#8249;
+      </button>
+  
+      <div
+        id="scrollContainer"
+        class="flex overflow-x-auto space-x-6 scrollbar-hide">
+        <% content.results.forEach(movie => { %>
+          <% if (movie.synopsis && movie.imageurl) { %>
+            <div class="bg-gray-800 rounded-lg flex-none w-64">
+              <img src="<%= movie.imageurl %>" alt="<%= movie.title %>" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h4 class="font-semibold text-lg text-white"><%= movie.title %></h4>
+                <p class="text-sm text-gray-400"><%= movie.synopsis %></p>
+              </div>
+            </div>
+          <% } %>
+        <% }); %>
       </div>
-
-      <div class="bg-gray-800 rounded-lg overflow-hidden">
-        <img src="https://source.unsplash.com/1600x900/?comedy-movie" alt="Movie Title" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Comedy Movie 2</h4>
-          <p class="text-sm text-gray-400">A hilarious comedy movie that will keep you laughing throughout.</p>
-        </div>
-      </div>
-
-      <div class="bg-gray-800 rounded-lg overflow-hidden">
-        <img src="https://source.unsplash.com/1600x900/?drama-movie" alt="Movie Title" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Drama Movie 3</h4>
-          <p class="text-sm text-gray-400">A gripping drama that explores deep emotions and conflicts.</p>
-        </div>
-      </div>
-
-      <div class="bg-gray-800 rounded-lg overflow-hidden">
-        <img src="https://source.unsplash.com/1600x900/?thriller-movie" alt="Movie Title" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Thriller Movie 4</h4>
-          <p class="text-sm text-gray-400">A thrilling movie with suspense and unexpected twists.</p>
-        </div>
-      </div>
+  
+      <button
+        id="scrollRight"
+        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10">
+        &#8250;
+      </button>
     </div>
   </section>
+  
 
   <!-- Genres Section -->
   <section class="container mx-auto px-4 py-8">
@@ -145,5 +142,7 @@
       </div>
     </div>
   </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
