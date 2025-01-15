@@ -1,3 +1,82 @@
+body{
+    background-color: #121212; /* Dark background */
+    color: #E2E8F0; /* Light text */
+}
+/* Trending Section Background  */
+.trending-section{
+    background-color: #2D3748; /* Dark Gray background for the trending section */
+}
+
+h1, h2, h3{
+    color: #F7FAFC; /* Light heading color */
+}
+  
+h4{
+    color: #CBD5E0; /* Lighter text for subheadings */
+}
+  
+      /* Smooth Hover Effects for Buttons */
+.hover\:bg-purple-500:hover{
+    background-color: #9F7AEA; /* Purple hover */
+}
+  
+.hover\:bg-purple-600:hover{
+    background-color: #805AD5; /* Darker purple */
+}
+.card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #1A202C; /* Dark background for cards */
+}
+  
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Enhanced hover effect */
+}
+h1, h2 {
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+  
+.text-gray-400, .text-sm {
+    color: #A0AEC0; /* Light text for small elements */
+}
+  
+      /* Gradient Hover Effects */
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, #6B46C1, #9F7AEA);
+}
+  
+      /* Button Hover Effects */
+button{
+    transition: background-color 0.3s ease;
+}
+  
+button:hover {
+    background-color: #6B46C1; /* Dark purple on hover */
+}
+  
+      /* Input Focus */
+input:focus {
+    outline-color: #9F7AEA; /* Purple focus border */
+}
+  
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+  
+      /* Footer Styles */
+footer {
+    background-color: #1A202C;
+    color: #CBD5E0; /* Lighter text in footer */
+}
+  
+footer a{
+        color: #9F7AEA; /* Purple links */
+}
+  
+footer a:hover{
+    color: #805AD5; /* Darker purple on hover */
+}
+
 #scrollContainer{
     display: flex;
     scroll-behavior: smooth; 

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./output.css">
 
 </head>
-<body class="bg-gray-900 text-white">
+<body>
   <!-- Navbar -->
   <header class="bg-gray-800 shadow-md">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -46,27 +46,24 @@
   <section class="container mx-auto px-4 py-8">
     <h3 class="text-3xl font-bold text-purple-500 mb-6">Trending Now</h3>
     <div class="relative">
-      <!-- Left Arrow Button -->
       <button
         id="prevButton"
         class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10">
         &#8249;
       </button>
   
-      <!-- Right Arrow Button -->
       <button
         id="nextButton"
         class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10">
         &#8250;
       </button>
   
-      <!-- Card Container -->
       <div
         id="scrollContainer"
         class="flex overflow-x-auto scroll-smooth">
         <% content.results.forEach(movie => { %>
           <% if (movie.synopsis && movie.imageurl) { %>
-            <div class="bg-gray-800 rounded-lg flex-none w-64">
+            <div class="card bg-gray-800 rounded-lg flex-none w-64">
               <img src="<%= movie.imageurl %>" alt="<%= movie.title %>" class="w-full h-48 object-cover">
               <div class="p-4">
                 <h4 class="font-semibold text-lg text-white"><%= movie.title %></h4>
@@ -79,7 +76,6 @@
     </div>
   </section>
   
-
   <!-- Genres Section -->
   <section class="container mx-auto px-4 py-8">
     <h3 class="text-3xl font-bold text-purple-500 mb-6">Browse by Genre</h3>
@@ -114,39 +110,41 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 py-8">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
-      <div>
-        <h4 class="font-bold text-white mb-4">StreamMax</h4>
-        <p class="text-gray-400">Your go-to streaming platform for movies and TV shows.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-white mb-4">Company</h4>
-        <ul class="text-gray-400 space-y-2">
-          <li><a href="#" class="hover:text-purple-400">About Us</a></li>
-          <li><a href="#" class="hover:text-purple-400">Careers</a></li>
-          <li><a href="#" class="hover:text-purple-400">Press</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-white mb-4">Support</h4>
-        <ul class="text-gray-400 space-y-2">
-          <li><a href="#" class="hover:text-purple-400">Help Center</a></li>
-          <li><a href="#" class="hover:text-purple-400">Terms of Service</a></li>
-          <li><a href="#" class="hover:text-purple-400">Privacy Policy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-white mb-4">Follow Us</h4>
-        <div class="flex space-x-4">
-          <a href="#" class="hover:text-purple-400">Facebook</a>
-          <a href="#" class="hover:text-purple-400">Twitter</a>
-        </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+<footer class="bg-gray-800 py-8">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div>
+      <h4 class="font-bold text-white mb-4">StreamMax</h4>
+      <p class="text-gray-400">Your go-to streaming platform for movies and TV shows.</p>
+    </div>
+    <div>
+      <h4 class="font-bold text-white mb-4">Company</h4>
+      <ul class="text-gray-400 space-y-2">
+        <li><a href="#" class="hover:text-purple-400">About Us</a></li>
+        <li><a href="#" class="hover:text-purple-400">Careers</a></li>
+        <li><a href="#" class="hover:text-purple-400">Press</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-white mb-4">Support</h4>
+      <ul class="text-gray-400 space-y-2">
+        <li><a href="#" class="hover:text-purple-400">Help Center</a></li>
+        <li><a href="#" class="hover:text-purple-400">Terms of Service</a></li>
+        <li><a href="#" class="hover:text-purple-400">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-white mb-4">Follow Us</h4>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-purple-400">Facebook</a>
+        <a href="#" class="hover:text-purple-400">Twitter</a>
+        <a href="#" class="hover:text-purple-400">Instagram</a>
       </div>
     </div>
-  </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="./script.js"></script>
-</body>
+  </div>
+</footer>
+
 </html>

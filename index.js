@@ -26,7 +26,7 @@ app.get("/", async (req,res)=>{
   }
   catch(error){
     console.log(error.message);
-    res.status(500).send("Something went wrong while fetching data.");
+    res.status(503).send({error:"Sorry the Service is temporarily unavailable.Please try again after few minutes"});
   }
 });
 
