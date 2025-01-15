@@ -1,0 +1,62 @@
+#scrollContainer{
+    display: flex;
+    scroll-behavior: smooth; 
+    padding-bottom: 16px; 
+}
+
+#scrollContainer > div{
+    flex: none;
+    margin-right: 16px; 
+}
+
+
+#prevButton, #nextButton{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-30%);
+    background-color: #6B46C1; 
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#prevButton{
+    left: 0;
+}
+
+#nextButton{
+    right: 0;
+}
+
+
+#prevButton:hover, #nextButton:hover{
+    background-color: #9F7AEA; 
+}
+
+.card{
+    background-color: #1A1A1A;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+    transform: scale(1.05);   /*this is for enhancing the card when hover*/
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    cursor:pointer;
+}
+
+.card h4{
+    font-size: 1.125rem;
+    color: white;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.card p{
+    color: #B0B0B0;
+    font-size: 0.875rem;
+}

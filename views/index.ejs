@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StreamMax</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./output.css">
 
 </head>
 <body class="bg-gray-900 text-white">
@@ -45,15 +46,24 @@
   <section class="container mx-auto px-4 py-8">
     <h3 class="text-3xl font-bold text-purple-500 mb-6">Trending Now</h3>
     <div class="relative">
+      <!-- Left Arrow Button -->
       <button
-        id="scrollLeft"
+        id="prevButton"
         class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10">
         &#8249;
       </button>
   
+      <!-- Right Arrow Button -->
+      <button
+        id="nextButton"
+        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10">
+        &#8250;
+      </button>
+  
+      <!-- Card Container -->
       <div
         id="scrollContainer"
-        class="flex overflow-x-auto space-x-6 scrollbar-hide">
+        class="flex overflow-x-auto scroll-smooth">
         <% content.results.forEach(movie => { %>
           <% if (movie.synopsis && movie.imageurl) { %>
             <div class="bg-gray-800 rounded-lg flex-none w-64">
@@ -66,12 +76,6 @@
           <% } %>
         <% }); %>
       </div>
-  
-      <button
-        id="scrollRight"
-        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10">
-        &#8250;
-      </button>
     </div>
   </section>
   
