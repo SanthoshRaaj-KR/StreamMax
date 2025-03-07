@@ -1,17 +1,30 @@
-const scrollContainer=document.getElementById("scrollContainer");
-const cards=scrollContainer.children;
-const cardsToShow=4; // Number of cards to show at once
-const cardWidth=cards[0].offsetWidth + 16; // Including margin-right of 16px
 
-document.getElementById("nextButton").addEventListener("click", () => {
-  const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-  const newScrollPosition = scrollContainer.scrollLeft + cardWidth * cardsToShow;
-  
-  scrollContainer.scrollLeft = Math.min(newScrollPosition, maxScroll);
-});
+  // TRENDING MOVIES SCROLLING
+  const trendingScrollContainer = document.getElementById("scrollContainer");
+  const trendingPrevButton = document.getElementById("prevButton");
+  const trendingNextButton = document.getElementById("nextButton");
 
+  if (trendingScrollContainer) {
+    trendingNextButton.addEventListener("click", () => {
+      trendingScrollContainer.scrollBy({ left: 900, behavior: "smooth" });
+    });
 
-document.getElementById("prevButton").addEventListener("click", () => {
-  const newScrollPosition = scrollContainer.scrollLeft - cardWidth * cardsToShow;
-  scrollContainer.scrollLeft = Math.max(newScrollPosition, 0);
-});
+    trendingPrevButton.addEventListener("click", () => {
+      trendingScrollContainer.scrollBy({ left: -900, behavior: "smooth" });
+    });
+  }
+
+  // GENRE MOVIES SCROLLING
+  const genreScrollContainer = document.getElementById("movies-list");
+  const genrePrevButton = document.getElementById("prevGenreButton");
+  const genreNextButton = document.getElementById("nextGenreButton");
+
+  if (genreScrollContainer) {
+    genreNextButton.addEventListener("click", () => {
+      genreScrollContainer.scrollBy({ left: 900, behavior: "smooth" });
+    });
+
+    genrePrevButton.addEventListener("click", () => {
+      genreScrollContainer.scrollBy({ left: -900, behavior: "smooth" });
+    });
+  }

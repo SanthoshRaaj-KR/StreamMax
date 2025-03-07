@@ -30,6 +30,30 @@ app.get("/", async (req,res)=>{
   }
 });
 
+app.get("/movies", async (req, res) => {
+  const genre = req.query.genre;
+  try {
+    const response = await axios.get("https://ott-details.p.rapidapi.com/advancedsearch", {
+      params: {
+        start_year: "2000",
+        min_imdb: "6",
+        type: "movie",
+        language: "english",
+        genre: genre // Filter by selected genre
+      },
+      headers: {
+        "x-rapidapi-key": "63fa050d33mshbc7ee4ca45209a4p1e7207jsn4a92ba421bdd",
+        "x-rapidapi-host": "ott-details.p.rapidapi.com"
+      }
+    });
+
+    res.json({ results: response.data.results });
+  } catch (error) {
+    console.log(error.message);
+    res.status(503).json({ error: "Service temporarily unavailable." });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Running at port ${port}`);
 });

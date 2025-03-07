@@ -80,15 +80,67 @@
   <section class="container mx-auto px-4 py-8">
     <h3 class="text-3xl font-bold text-purple-500 mb-6">Browse by Genre</h3>
     <div class="flex space-x-4 overflow-x-auto">
-      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Action</button>
-      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Romance</button>
-      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Sci-Fi</button>
-      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Drama</button>
-      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Horror</button>
-      <button class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Comedy</button>
+      <button onclick="fetchMovies('Action')" class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Action</button>
+      <button onclick="fetchMovies('Romance')" class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Romance</button>
+      <button onclick="fetchMovies('Sci-Fi')" class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Sci-Fi</button>
+      <button onclick="fetchMovies('Drama')" class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Drama</button>
+      <button onclick="fetchMovies('Horror')" class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Horror</button>
+      <button onclick="fetchMovies('Comedy')" class="px-6 py-3 bg-gray-800 rounded-lg text-white hover:bg-purple-500">Comedy</button>
     </div>
   </section>
-
+  
+  <!-- Movies Display Section -->
+  <section class="container mx-auto px-4 py-8">
+    <h3 id="genre-heading" class="text-3xl font-bold text-purple-500 mb-6"></h3>
+    <div class="relative">
+      <!-- Scroll Buttons -->
+      <button
+      id="prevGenreButton"
+      class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10">
+      &#8249;
+    </button>
+    
+    <button
+      id="nextGenreButton"
+      class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10">
+      &#8250;
+    </button>
+  
+      <!-- Movie List (Scrollable Section) -->
+      <div id="movies-list" class="flex space-x-4 overflow-x-auto scroll-smooth p-4">
+        <!-- Movies will be added here dynamically -->
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function fetchMovies(genre) {
+      document.getElementById("genre-heading").innerText = genre; // Update heading
+  
+      fetch(`/movies?genre=${genre}`)
+        .then(response => response.json())
+        .then(data => {
+          const movieList = document.getElementById("movies-list");
+          movieList.innerHTML = ""; // Clear previous movies
+  
+          data.results.forEach(movie => {
+            if (movie.synopsis && movie.imageurl) {
+              const movieCard = `
+                <div class="bg-gray-800 rounded-lg p-4 w-64 flex-none">
+                  <img src="${movie.imageurl}" alt="${movie.title}" class="w-full h-48 object-cover rounded">
+                  <h4 class="font-semibold text-lg text-white mt-2">${movie.title}</h4>
+                  <p class="text-sm text-gray-400">${movie.synopsis}</p>
+                </div>
+              `;
+              movieList.innerHTML += movieCard;
+            }
+          });
+        })
+        .catch(error => console.error("Error fetching movies:", error));
+    }
+  </script>
+  
+  
   <!-- Testimonials Section -->
   <section class="bg-gray-800 py-8">
     <div class="container mx-auto px-4">
